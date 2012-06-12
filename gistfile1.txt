@@ -1,45 +1,45 @@
 Note 1: The following CQ curl commands assumes a admin:admin username and password.
 Note 2: For Windows/Powershell users: use two "" when doing a -F cURL command.
-        Example: -F"":operation=delete""
+		Example: -F"":operation=delete""
 Note 3: Quotes around name of package (or name of zip file, or jar) should be included.
 
 Uninstall a bundle (use http://localhost:4505/system/console/bundles to access the Apache Felix web console)
-        curl -u admin:admin -daction=uninstall http://localhost:4505/system/console/bundles/"name of bundle"
+		curl -u admin:admin -daction=uninstall http://localhost:4505/system/console/bundles/"name of bundle"
 
 Upload a package AND install
-        curl -u admin:admin -F file=@"name of zip file" -F name="name of package" -F force=true -F install=true http://localhost:4505/crx/packmgr/service.jsp
+		curl -u admin:admin -F file=@"name of zip file" -F name="name of package" -F force=true -F install=true http://localhost:4505/crx/packmgr/service.jsp
 
 Upload a package DO NOT install
-        curl -u admin:admin -F file=@"name of zip file" -F name="name of package" -F force=true -F install=false http://localhost:4505/crx/packmgr/service.jsp
+		curl -u admin:admin -F file=@"name of zip file" -F name="name of package" -F force=true -F install=false http://localhost:4505/crx/packmgr/service.jsp
 
 Install a bundle
-        curl -u admin:admin -F action=install -F bundlestartlevel=20 -F bundlefile=@"name of jar.jar" http://localhost:4505/system/console/bundles
+		curl -u admin:admin -F action=install -F bundlestartlevel=20 -F bundlefile=@"name of jar.jar" http://localhost:4505/system/console/bundles
 
 Build a bundle
-        curl -u admin:admin -F bundleHome=/apps/centrica/bundles/name of bundle -F descriptor=/apps/centrica/bundles/com.centrica.cq.wcm.core-bundle/name of bundle.bnd http://localhost:4505/libs/crxde/build
+		curl -u admin:admin -F bundleHome=/apps/centrica/bundles/name of bundle -F descriptor=/apps/centrica/bundles/com.centrica.cq.wcm.core-bundle/name of bundle.bnd http://localhost:4505/libs/crxde/build
 
 Stop a bundle
-       curl -u admin:admin http://localhost:4505/system/console/bundles/org.apache.sling.scripting.jsp -Faction=stop
+		curl -u admin:admin http://localhost:4505/system/console/bundles/org.apache.sling.scripting.jsp -Faction=stop
 
 Start a bundle
-       curl -u admin:admin http://localhost:4505/system/console/bundles/org.apache.sling.scripting.jsp -Faction=start
+		curl -u admin:admin http://localhost:4505/system/console/bundles/org.apache.sling.scripting.jsp -Faction=start
 
 Delete a node (hierarchy) - (this will delete any directory / node / site)
-       curl -F":operation=delete" -F":applyTo=name of node tree" http://localhost:90002/ -u admin:admin
+		curl -F":operation=delete" -F":applyTo=name of node tree" http://localhost:90002/ -u admin:admin
 
 Rebuild an existing package in CQ - (this will ensure that latest content is taken from the CQ instance)   
-       curl -u admin:admin -X POST http://:/crx/packmgr/service/.json/etc/packages/name of package.zip?cmd=build
+		curl -u admin:admin -X POST http://:/crx/packmgr/service/.json/etc/packages/name of package.zip?cmd=build
 
 Download (the package)
-       curl -u admin:admin http://localhost:4505/etc/packages/export/name of package.zip > name of local package file
+		curl -u admin:admin http://localhost:4505/etc/packages/export/name of package.zip > name of local package file
 
 Upload
-       curl -u admin:admin -F package=@"name of package.zip" http://hostname:port/crx/packmgr/service/.json/?cmd=upload
+		curl -u admin:admin -F package=@"name of package.zip" http://hostname:port/crx/packmgr/service/.json/?cmd=upload
 
 Install
-       curl -u admin:admin -X POST http://hostname:port/crx/packmgr/service/.json/etc/packages/export/name of package?cmd=install
+		curl -u admin:admin -X POST http://hostname:port/crx/packmgr/service/.json/etc/packages/export/name of package?cmd=install
 
 Tree Activation
-       curl -u admin:admin -F cmd=activate -F ignoredeactivated=true -F onlymodified=true -F path=/content/geometrixx http://localhost:4502/etc/replication/treeactivation.html
+		curl -u admin:admin -F cmd=activate -F ignoredeactivated=true -F onlymodified=true -F path=/content/geometrixx http://localhost:4502/etc/replication/treeactivation.html
 
 Further Resources - http://cq-ops.tumblr.com/post/19017053665/useful-curl-commands
