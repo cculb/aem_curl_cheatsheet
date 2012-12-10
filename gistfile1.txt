@@ -32,8 +32,7 @@ Start a bundle
         -Faction=start
 
 Delete a node (hierarchy) - (this will delete any directory / node / site)
-        curl -F":operation=delete" -F":applyTo=name of node tree" 
-        http://localhost:90002/ -u admin:admin
+        curl -X DELETE http://localhost:4505/path/to/node/jcr:content/nodeName -u admin:admin
 
 Rebuild an existing package in CQ
         curl -u admin:admin -X POST http://localhost:4505:/crx/packmgr/service/.json/etc/packages/name_of_package.zip?cmd=build
