@@ -56,4 +56,7 @@ Tree Activation
         curl -u admin:admin -F cmd=activate -F ignoredeactivated=true -F onlymodified=true 
         -F path=/content/geometrixx http://localhost:4502/etc/replication/treeactivation.html
 
-Further Resources - http://cq-ops.tumblr.com/post/19017053665/useful-curl-commands
+Further Resources:
+
+http://cq-ops.tumblr.com/post/19017053665/useful-curl-commands
+http://balawcm.wordpress.com/2013/02/13/curl-it-out-adobe-cq5-curl-commands-and-usage/
