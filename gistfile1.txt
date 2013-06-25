@@ -46,6 +46,12 @@ Upload a new package
 Install an existing package
         curl -u admin:admin -X POST http://localhost:4505/crx/packmgr/service/.json/etc/packages/export/name of package?cmd=install
 
+Activate
+        curl -u admin:admin -X POST -F path="/content/path/to/page" -F cmd="activate" http://localhost:4502/bin/replicate.json
+
+Deactivate
+        curl -u admin:admin -X POST -F path="/content/path/to/page" -F cmd="deactivate" http://localhost:4502/bin/replicate.json
+
 Tree Activation
         curl -u admin:admin -F cmd=activate -F ignoredeactivated=true -F onlymodified=true 
         -F path=/content/geometrixx http://localhost:4502/etc/replication/treeactivation.html
