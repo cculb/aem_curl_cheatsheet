@@ -17,11 +17,11 @@ Build a bundle
 
 Stop a bundle
         curl -u admin:admin http://localhost:4505/system/console/bundles/org.apache.sling.scripting.jsp 
-        -Faction=stop
+        -F action=stop
 
 Start a bundle
         curl -u admin:admin http://localhost:4505/system/console/bundles/org.apache.sling.scripting.jsp 
-        -Faction=start
+        -F action=start
 
 Delete a node (hierarchy) - (this will delete any directory / node / site)
         curl -X DELETE http://localhost:4505/path/to/node/jcr:content/nodeName -u admin:admin
