@@ -62,6 +62,9 @@ Lock page
 Unlock page
         curl -u admin:admin -X POST -F cmd="unlockPage" -F path="/content/path/to/page" -F "_charset_"="utf-8" http://localhost:4502/bin/wcmcommand
 
+Copy page
+        curl -u admin:admin -F:operation=copy -F:dest=/path/to/destination http://localhost:4505/path/to/source
+
 Further Resources:
 
 http://cq-ops.tumblr.com/post/19017053665/useful-curl-commands
